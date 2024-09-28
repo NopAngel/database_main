@@ -1,0 +1,25 @@
+-- Conectar a PostgreSQL y crear la base de datos
+CREATE DATABASE compania_x;
+
+-- Conectar a la base de datos
+\c compania_x;
+
+-- Crear la tabla usuarios
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+    apellido VARCHAR(50),
+    email VARCHAR(100),
+    fecha_registro DATE
+);
+
+-- Insertar datos ficticios en la tabla usuarios
+INSERT INTO usuarios (nombre, apellido, email, fecha_registro) VALUES
+('Juan', 'Pérez', 'juan.perez@example.com', '2023-01-15'),
+('María', 'Gómez', 'maria.gomez@example.com', '2023-02-20'),
+('Carlos', 'López', 'carlos.lopez@example.com', '2023-03-10'),
+('Ana', 'Martínez', 'ana.martinez@example.com', '2023-04-05'),
+('Luis', 'Fernández', 'luis.fernandez@example.com', '2023-05-25');
+
+-- Verificar los datos insertados
+SELECT * FROM usuarios;
